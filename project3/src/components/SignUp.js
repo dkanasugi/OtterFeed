@@ -3,12 +3,20 @@ import { firebaseApp, userRef } from "../firebase";
 import { Redirect, Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { withStyles } from "@material-ui/styles";
+
 import Paper from "@material-ui/core/Paper";
 import Container from "@material-ui/core/Container";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
-
+import Avatar from "@material-ui/core/Avatar";
+import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
+import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+import Typography from "@material-ui/core/Typography";
+import Paper from "@material-ui/core/Paper";
+import Container from "@material-ui/core/Container";
+import Image from '../blue_background.jpg';
 
 const styles = () => ({
   "@global": {
@@ -96,11 +104,13 @@ class SignUp extends Component {
       else {
         return (
           <Container component="main" maxWidth="xs">
-            <Paper>
-              <div>
-                <Typography component="h1" variant="h5">
-                  Sign Up
-                </Typography>
+            <Paper className={classes.paper}>
+              <Avatar className={classes.avatar}>
+                <LockOutlinedIcon />
+              </Avatar>
+              <Typography component="h1" variant="h5">
+                Sign Up
+              </Typography>
 
                 <TextField
                   variant="outlined"
@@ -156,7 +166,7 @@ class SignUp extends Component {
                 >
                   Sign Up
                 </Button>
-            </div>
+
             <Link to="login">Click to Login</Link>
           </Paper>
         </Container>
